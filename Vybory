@@ -1,0 +1,22 @@
+districts = []
+s = []
+
+for i in range(0, N):
+  a, b = map(int, input().split())
+districts.append((a, b))
+v_a = v_a + a
+sum = a + b
+s.append((sum, i))
+
+s.sort(reverse=True)
+
+i = 0
+j = 0
+
+while v_b <= v_a:
+  v_b = v_b + s[i][0]
+  v_a = v_a - districts[s[i][1]][0]
+  j = j+1
+
+
+print(j)
